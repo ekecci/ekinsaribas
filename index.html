@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ekin Saribas – Selected Works 2026</title>
+<meta name="description" content="Ekin Saribas, junior architectural designer (MSc Architecture, TU Delft). Selected works 2021–2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"YuGothicP";src:url(fonts/yugothic-regular.ttf) format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:"YuGothicP";src:url(fonts/yugothic-bold.ttf) format("truetype");font-weight:700;font-display:swap}
+/* VOICE: quiet editorial, a printed booklet photographed on black
+   IDEA: her portfolio as a real uncoated-paper booklet that you pick up (zoom) and leaf through (curling page flip)
+   PICTURE: the booklet small and far on a grainy black ground, then close and sharp
+   COLOUR and TYPE: black grain, off-white paper, her own page colours; Zen Kaku Gothic New
+   LAYOUT: stage first (book far), paper tag to open the project, project pages below */
+:root{color-scheme:dark;--bg:#0b0b0b;--ink:#efece6;--mute:#8f8b85;--line:#2a2826;--paper:#eceae6;--thread:#b9412f}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:16px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "YuGothicP","Yu Gothic","Zen Kaku Gothic New",system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}img{display:block;max-width:100%}
+body{--sw:250px;--fs:17px;background:#0d0d0d url(pages/desk.jpg) 0 0/600px repeat}
+body:not(.detail)::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse at 58% 48%,transparent 35%,rgba(0,0,0,.55))}
+#side,main,footer{position:relative;z-index:1}
+body.near{--sw:180px;--fs:13px}
+#side{position:fixed;left:0;top:0;bottom:0;width:var(--sw);padding:34px 28px;display:flex;flex-direction:column;gap:34px;z-index:20;background:transparent;transition:width .9s cubic-bezier(.65,0,.25,1),padding .9s}
+main,footer{margin-left:var(--sw);transition:margin-left .9s cubic-bezier(.65,0,.25,1)}
+#side .brand{display:flex;flex-direction:column;gap:2px;font-size:var(--fs);line-height:1.3;transition:font-size .9s}
+#side nav{display:flex;flex-direction:column;align-items:flex-start;gap:2px;margin:0}
+#side nav a,#side nav button{font-size:var(--fs);line-height:1.6;min-height:0;padding:2px 0;text-align:left;transition:font-size .25s cubic-bezier(.3,0,.2,1),color .25s}
+#side nav a:hover,#side nav button:hover,#side nav a:focus-visible,#side nav button:focus-visible{font-size:calc(var(--fs) * 1.35);color:var(--ink)}
+#side .plist{opacity:0;pointer-events:none;transition:opacity .6s}
+body.near #side .plist,body.detail #side .plist{opacity:1;pointer-events:auto}
+#side .plist .lab{font-size:calc(var(--fs) * .85);color:var(--mute);margin:0 0 6px}
+@media(max-width:760px){#side{position:sticky;bottom:auto;width:auto;flex-direction:row;flex-wrap:wrap;gap:8px 20px;padding:12px 16px;background:var(--bg)}#side nav{flex-direction:row;flex-wrap:wrap;gap:0 14px}#side .plist{display:none}main,footer{margin-left:0}body,body.near{--fs:14px}}
+.wrap{max-width:1240px;margin:0 auto;padding:0 max(5vw,16px)}
+.brand{text-decoration:none;color:var(--mute)}.brand b{color:var(--ink);font-weight:700}
+nav a{text-decoration:none;color:var(--mute)}nav a.on{color:var(--ink);font-weight:700}nav a:hover{color:var(--ink)}
+button{font:inherit;font-size:14px;font-weight:400;min-height:40px;padding:0 6px;border:0;background:none;color:var(--mute);cursor:pointer;letter-spacing:.01em}
+button:hover{color:var(--ink)}
+button.on,button[aria-current="true"]{color:var(--ink);font-weight:700}:focus-visible{outline:2px solid var(--thread);outline-offset:2px}
+#stage{position:relative;height:100vh;padding-bottom:56px;min-height:460px;overflow:hidden;background:transparent;display:grid;place-items:center;touch-action:pan-y}
+#zw{position:relative;z-index:1;transform-origin:50% 50%;will-change:transform}
+#stage #zw.anim{transition:transform 1s cubic-bezier(.65,0,.25,1),filter .3s}
+#stage:not(.near) #zw:hover{filter:brightness(1.07)}
+#zw{transition:filter .3s}
+#shift{filter:drop-shadow(1.5px 1px 0 #d9d6d0) drop-shadow(1.5px 1px 0 #c9c5be) drop-shadow(1px 1.5px 0 #b8b3ab) drop-shadow(0 2px 3px rgba(0,0,0,.55)) drop-shadow(10px 26px 34px rgba(0,0,0,.6));transition:transform 1s cubic-bezier(.45,0,.2,1)}
+#flip{margin:0 auto}
+#flip .page{background:#e9e7e3;overflow:hidden}
+#flip .page img{width:100%;height:100%;object-fit:cover;user-select:none;-webkit-user-drag:none;pointer-events:none}
+a.toc{position:absolute;left:14%;width:80%;height:13.5%;z-index:3;display:block;cursor:pointer;border-radius:2px}a.toc:hover{background:rgba(0,0,0,.035)}a.toc:focus-visible{outline:2px solid var(--thread)}
+#lens{position:fixed;z-index:30;width:260px;height:260px;border-radius:50%;pointer-events:none;display:none;background-repeat:no-repeat;background-color:#eceae6;box-shadow:0 0 0 1px rgba(255,255,255,.55),0 14px 40px rgba(0,0,0,.6);transform:translate(-50%,-50%)}
+#stage.mag #catch,#stage.mag #flip{cursor:none}
+#magBtn[aria-pressed="true"]{color:var(--ink);font-weight:700}
+#catch{position:absolute;inset:0;z-index:5;touch-action:pan-y}
+:root{--hand:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24'%3E%3Cpath d='M9 12V4.5a1.5 1.5 0 0 1 3 0V10a1.5 1.5 0 0 1 3 0v1a1.5 1.5 0 0 1 3 0v1a1.5 1.5 0 0 1 3 0v3.5c0 4-3 7-7 7h-1.2c-2.6 0-4.2-1.2-5.6-3.4L4.4 15a1.5 1.5 0 0 1 2.5-1.6L9 16z' fill='%23fff' stroke='%23111' stroke-width='1.3' stroke-linejoin='round'/%3E%3C/svg%3E") 9 2,pointer}
+#catch,#flip,#flip *,a,button,.sheet,#stage{cursor:var(--hand)}
+#invite{position:absolute;z-index:4;text-align:left;font-size:clamp(20px,1.9vw,30px);line-height:1.25;font-weight:700;color:var(--ink);pointer-events:none;transition:opacity .5s,left .9s cubic-bezier(.45,0,.2,1),top .9s cubic-bezier(.45,0,.2,1);opacity:0}
+#invite.ready{opacity:1}
+#invite b{color:var(--ink);font-weight:700}
+#stage.near #invite{opacity:0!important}
+#stage:not(.near) .stagebar{opacity:0;pointer-events:none}
+.stagebar{transition:opacity .5s}
+@media(max-width:760px){#invite{white-space:normal;width:90%}}
+#stage.near #catch{display:none}
+#zoomOut{position:absolute;right:max(5vw,16px);top:10px;z-index:6}
+#zoomOut[hidden]{display:none}
+.stagebar{position:absolute;left:0;right:0;bottom:6px;z-index:6;display:flex;align-items:center;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;padding:0 max(5vw,16px);font-size:13px;color:var(--mute)}
+.stagebar .where b{color:var(--ink)}
+.stagebar .tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:0 18px}
+.stagebar .tabs button,.stagebar .pn2 button{font-size:13px;min-height:36px}
+.stagebar .pn2{display:flex;gap:6px;align-items:center}
+#tag{font-weight:700;color:var(--ink)}#tag[hidden]{display:none}
+@media(max-width:760px){.stagebar .where{display:none}.stagebar{justify-content:center}}
+.hintbar{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:14px 16px 6px;color:var(--mute);font-size:13px}
+.chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:6px 16px 30px}
+.chips button{min-height:36px;font-size:13px;border-color:var(--line);color:var(--mute)}.chips button.on,.chips button:hover{border-color:var(--ink);color:var(--ink);background:none}
+#detail{display:none;padding-block:clamp(28px,5vw,72px)}
+body.detail #detail{display:block}body.detail #home{display:none}
+body.detail{--bg:#fff;--ink:#231f20;--mute:#8a8684;--line:#e8e6e3;--soft:#4a4644;background:#fff;color:var(--ink);color-scheme:light}
+#side{--ink:#efece6;--mute:#8f8b85;mix-blend-mode:difference;color:var(--ink)}
+.light{background:#fff;--ink:#231f20;--mute:#8a8684;--line:#e4e2df;--soft:#4a4644;color:var(--ink);margin-left:calc(-1 * var(--sw));padding-left:var(--sw);transition:margin-left .9s cubic-bezier(.65,0,.25,1),padding-left .9s cubic-bezier(.65,0,.25,1);position:relative;z-index:1}
+footer{background:#fff;color:#8a8684!important;margin-left:0!important;padding-left:var(--sw)!important}
+@media(max-width:760px){.light{margin-left:0;padding-left:0}footer{padding-left:16px!important}}
+body{transition:background-color .5s,color .5s}
+.backbtn{margin-bottom:28px}
+.dhead{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(20px,4vw,56px)}
+.dhead h1{font-size:clamp(40px,6vw,76px);line-height:1;margin:0;font-weight:700;letter-spacing:-.01em;text-wrap:balance}
+.dhead .num{font-size:clamp(28px,3.4vw,44px);font-weight:300;color:var(--mute);display:block;margin-bottom:8px}
+.dtag{font-size:20px;font-weight:700;margin:24px 0 10px;max-width:40ch}.dsum{color:var(--soft,#c9c5be);font-weight:400;white-space:pre-line;max-width:64ch;margin:0}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 24px;margin:0;align-content:start;font-size:14px}
+.facts dt{color:var(--mute);font-size:13px}.facts dd{margin:0;font-weight:500}
+.sheets{display:grid;gap:clamp(20px,3vw,40px);margin-top:clamp(32px,5vw,64px)}
+.sheet{margin:0;background:none;padding:0;cursor:zoom-in}
+.sheet img{width:100%;height:auto}.sheet figcaption{color:var(--mute);font-size:13px;padding:10px 0 0}.sheet .lbl{font-weight:700;color:var(--ink);margin-right:10px}
+.pn{display:flex;justify-content:space-between;gap:12px;margin-top:48px;flex-wrap:wrap}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.1,1)}.rv.in{opacity:1;transform:none}
+#box{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.94);display:none;place-items:center;padding:16px;cursor:zoom-out}#box.on{display:grid}#box img{max-height:96vh;width:auto}
+.about{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(20px,4vw,56px);padding-block:clamp(40px,6vw,88px)}
+.about img{width:100%;max-height:520px;object-fit:cover;object-position:center 30%;filter:grayscale(1)}.about h2{font-size:clamp(28px,3.6vw,40px);margin:0 0 12px}.about p{white-space:pre-line;color:#c9c5be;font-weight:300;max-width:62ch}
+.contact{display:flex;flex-wrap:wrap;gap:12px 36px;font-size:clamp(17px,2vw,22px);margin-top:24px}.contact a{text-decoration:none;border-bottom:1px solid var(--line)}
+.where2{font-size:14px;color:var(--mute);margin:0 0 20px}.where2 b{color:var(--ink)}
+.about #atext{white-space:pre-line;color:var(--soft);font-weight:400;max-width:52ch;font-size:16px;line-height:1.7;margin:0}
+.alists{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 40px}
+.acol h3{font-size:17px;font-weight:700;margin:0 0 12px;color:var(--ink)}
+.acol ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.acol li{display:grid;gap:2px;font-size:14px;line-height:1.5}.acol li b{color:var(--ink);font-weight:700}.acol li span{color:var(--mute)}
+@media(max-width:760px){.alists{grid-template-columns:minmax(0,1fr)}}
+footer{padding:28px 0 48px;color:var(--mute);font-size:13px}
+.note{color:var(--mute);font-size:13px;text-align:center}
+#panel{position:fixed;top:0;right:0;bottom:0;width:min(520px,100%);z-index:70;background:#141312;border-left:1px solid var(--ink);transform:translateX(102%);transition:transform .35s;overflow-y:auto;padding:20px}
+#panel.on{transform:none}#panel h3{font-size:18px;margin:6px 0 14px}
+.prow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.ctl{display:flex;gap:6px}.ctl button{min-height:36px;padding:0 10px}
+label{display:block;font-size:13px;color:var(--mute);margin:12px 0 4px}
+input,textarea,select{width:100%;font:inherit;font-size:16px;padding:8px 10px;border:1px solid var(--line);background:#0e0d0c;color:var(--ink);border-radius:2px}textarea{min-height:120px}
+.srow{display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}.srow img{width:72px;height:50px;object-fit:cover;background:#222}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.danger{border-color:#e0675a;color:#e0675a}.danger:hover{background:#e0675a;color:#000}
+#msg{font-size:13px;min-height:20px;color:#e9a99f}.hid{font-size:12px;color:var(--mute);margin-left:6px}
+@media(max-width:760px){.dhead,.about{grid-template-columns:minmax(0,1fr)}#stage{height:70vh}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body><script>(()=>{const SITE={"about": "I'm Ekin, a junior architectural designer based in The Hague. I studied Architecture at TU Eindhoven (BSc) and TU Delft (MSc), and graduated with Reconnecting Homs, a reconstruction project for the old town of Homs made with UN-Habitat.\n\nMy projects start from what a place already has: the routes, materials and everyday routines that survive damage, poverty or neglect, and how architecture can stitch them back together. I've worked on public, residential, hospitality and exhibition projects in Europe, Türkiye, Georgia and Kazakhstan.\n\nNext to architecture I work on the visual side of things: fashion and editorial direction for The Modern Issue, my own jewellery brand, and the AI systems I build to run my studio work.", "email": "ekinecesaribas@gmail.com", "linkedin": "https://linkedin.com/in/ekin-saribas-834a38244", "portfolio": "https://behance.net/ekinsaribas", "name": "Ekin Saribas", "role": "Junior Architectural Designer | MSc Architecture, TU Delft"},PROJ=[{"id": "homs", "order": 1, "title": "Reconnecting Homs", "tagline": "The city is damaged. The system is still there.", "summary": "Rather than rebuilding Homs Old Town as a collection of isolated objects, this project begins with the network that still connects it: the bazaar. I mapped surviving routes, workshops, courtyards and patterns of trade to find where a targeted intervention could restore continuity.\n\nAt the end of the bazaar, a ruined khan becomes a cultural centre with workshops, a library, auditorium, restaurant and public courtyard. Historic masonry defines the spatial sequence, while a new independent structure carries the programme.", "kind": "Public Building | Cultural Center – Reconstruction", "place": "Homs, Syria", "year": "2025–2026", "context": "TU Delft, UN-Habitat, Humane Urbanism", "tutors": "Job Schroën, Alessandra Navarro, Tosin Oshinowo", "team": "", "software": "", "cover": "img/homs_hero.jpg", "spreads": [{"src": "img/homs_1.jpg", "tab": "Introduction", "caption": ""}, {"src": "img/homs_2.jpg", "tab": "Technique", "caption": "Reading damage as a broken network"}, {"src": "img/homs_3.jpg", "tab": "Floor Plan", "caption": ""}, {"src": "img/homs_4.jpg", "tab": "Zoom In", "caption": ""}]}, {"id": "bond", "order": 2, "title": "The Bond", "tagline": "Stitching Brussels back together", "summary": "A cultural hub between the EU Quarter and its surrounding neighbourhood. The neighbourhood comes before the masterplan: separate plots become one shared ground, with a route that leads from the metro entrance through terraces to a courtyard, marking where people pass through and where they stop.", "kind": "Public Building | Cultural Hub", "place": "Brussels, Belgium", "year": "2024–25", "context": "TU Delft", "tutors": "", "team": "", "software": "", "cover": "img/bond_hero.jpg", "spreads": [{"src": "img/bond_1.jpg", "tab": "Introduction", "caption": ""}, {"src": "img/bond_2.jpg", "tab": "Technique", "caption": "The neighbourhood comes before the masterplan"}, {"src": "img/bond_3.jpg", "tab": "Floor Plan", "caption": ""}, {"src": "img/bond_4.jpg", "tab": "Zoom In", "caption": ""}]}, {"id": "tigre", "order": 3, "title": "Tigre Games", "tagline": "How do you add homes without taking away a neighbourhood?", "summary": "A fieldwork-based academic proposal for El Garrote, Buenos Aires. The plan becomes the game: residents combine housing modules and cards to grow the neighbourhood step by step, adding homes, shared space and services without displacing the people who live there.", "kind": "Residential | Slum Redevelopment", "place": "Buenos Aires, Argentina", "year": "2025", "context": "TU Delft", "tutors": "", "team": "", "software": "", "cover": "img/tigre_hero.jpg", "spreads": [{"src": "img/tigre_1.jpg", "tab": "Introduction", "caption": ""}, {"src": "img/tigre_2.jpg", "tab": "Technique", "caption": "The plan becomes the game"}, {"src": "img/tigre_3.jpg", "tab": "Floor Plan", "caption": ""}, {"src": "img/tigre_4.jpg", "tab": "Zoom In", "caption": ""}]}, {"id": "sequence", "order": 4, "title": "The Sequence", "tagline": "City chaos, but make it healing", "summary": "An urban block in Arnhem built on a mapping of movement and noise. The design moves from the active Rozet edge, through a planted courtyard, to quieter housing and treatment spaces.", "kind": "Residential-Commercial | Urban Block Design", "place": "Arnhem, Netherlands", "year": "2023–24", "context": "TU Delft", "tutors": "", "team": "", "software": "", "cover": "img/sequence_hero.jpg", "spreads": [{"src": "img/sequence_1.jpg", "tab": "Introduction", "caption": ""}, {"src": "img/sequence_2.jpg", "tab": "Technique", "caption": "Mapping the transition from activity to calm"}, {"src": "img/sequence_3.jpg", "tab": "Floor Plan", "caption": ""}, {"src": "img/sequence_4.jpg", "tab": "Zoom In", "caption": ""}]}, {"id": "bau", "order": 5, "title": "BAU Munich", "tagline": "Exhibition stand, professional work at Rhine Projects", "summary": "Independently designed a complete exhibition stand for BAU Munich 2025, one of the leading international trade fairs for architecture, materials and construction: the visitor sequence and the stand interior, as well as the posters, flyers and banners, within two days and on a tight budget.", "kind": "Professional · Individual", "place": "Munich, Germany", "year": "2025", "context": "Rhine Projects International", "tutors": "", "team": "", "software": "", "cover": "img/work_hero.jpg", "spreads": [{"src": "img/work_1.jpg", "tab": "Introduction", "caption": "Exhibition stand design, BAU Munich 2025"}]}, {"id": "abastumani", "order": 6, "title": "Abastumani Hotel", "tagline": "Hotel and spa interiors in a heritage building", "summary": "Contributed to the Abastumani hotel project in Georgia at Rhine Projects International: concepts, moodboards, material palettes and preliminary models, with interior, exterior and contextual design studies. Worked in Revit on the spa and pool design; the interior materiality and moodboard were my individual part within the team.", "kind": "Professional | Hotel & Spa Interiors", "place": "Abastumani, Georgia", "year": "", "context": "Rhine Projects International", "tutors": "", "team": "", "software": "Revit", "cover": "img/abastumani_1.jpg", "spreads": [{"src": "img/abastumani_1.jpg", "tab": "Introduction", "caption": "Public, semi-public and private interiors with their materiality"}]}];const db={doc:()=>({onSnapshot:f=>{f({exists:true,data:()=>SITE});return()=>{}}}),collection:()=>({onSnapshot:f=>{f({docs:PROJ.map(p=>({id:p.id,data:()=>p})),metadata:{fromCache:false}});return()=>{}}})};window.claude={use:async n=>n==='db'?db:n==='user'?{canEdit:async()=>false}:null}})()</script>
+<aside id="side"><a class="brand" href="#book"><span>Selected Works 2026</span><b>Ekin Saribas</b></a>
+<nav aria-label="Site"><a href="#book" class="on">Portfolio</a><a href="#about">About</a><a href="#contact">Contact</a><button id="editBtn" hidden>Edit</button></nav>
+<div class="plist"><p class="lab">In the booklet</p><nav id="chips" aria-label="Projects"></nav></div></aside>
+<main>
+<div id="home">
+  <div id="stage" aria-label="Portfolio booklet. Click it to pick it up; then click or drag a page corner to turn the page." tabindex="0">
+    <div id="invite">Do you have time for a closer inspection?<br>Pick up the booklet.</div><div id="zw"><div id="shift"><div id="flip"></div></div><div id="catch" role="button" aria-label="Zoom in to the booklet"></div></div>
+    <button id="zoomOut" hidden>Close</button>
+    <div class="stagebar"><span class="where" id="count">Click the booklet to open it</span><span class="pn2"><button id="magBtn" aria-pressed="false" title="Magnify (M)">Magnify</button><button id="prev" aria-label="Previous page">←</button><button id="next" aria-label="Next page">→</button><button id="tag" hidden></button></span></div>
+  </div>
+  <div class="light"><section class="wrap about" id="about"><div class="aintro"><p class="where2">Selected Works 2026 | <b>About me</b></p><p id="atext"></p><div class="contact" id="contact"></div></div><div class="alists"><div class="acol"><h3>Projects</h3><ul><li><b>Reconnecting Homs</b><span>Homs, Syria · MSc graduation project with UN-Habitat · 2025–26</span></li><li><b>The Bond</b><span>Brussels · cultural hub between the EU Quarter and its neighbourhood · MVRDV tutoring · 2024–25</span></li><li><b>Tigre Games</b><span>Buenos Aires · slum redevelopment played as a card game · 2025</span></li><li><b>The Sequence</b><span>Arnhem · urban block around a health centre · 2023–24</span></li><li><b>Abastumani Hotel</b><span>Georgia · hotel and spa interiors in Revit · Rhine Projects</span></li><li><b>BAU Munich 2025</b><span>Exhibition stand designed in two days · Rhine Projects</span></li></ul></div><div class="acol"><h3>Competitions</h3><ul><li><b>DAIDA Global Urban Thesis Award 2026</b><span>Safe Cities · nominee with Reconnecting Homs</span></li><li><b>Buildner Unbuilt Award 2026</b><span>Entry with the Homs project</span></li></ul></div><div class="acol"><h3>Experience</h3><ul><li><b>Rhine Projects GmbH</b><span>Architectural Design Assistant · 2024–26 · Abastumani hotel, BAU Munich stand, site visit to a sports university construction site in Kazakhstan</span></li><li><b>Olimpik Havuz</b><span>Architectural Design Assistant · 2023–26 · Mandarin Oriental Bodrum, Amanruya, AutoCAD for sauna, spa and pool projects</span></li><li><b>CHEOPS</b><span>P-Council member · TU Eindhoven architecture association · 2021–22</span></li></ul></div><div class="acol"><h3>Beyond architecture</h3><ul><li><b>Fashion</b><span>Leading the visual direction of The Modern Issue, a culture-driven fashion platform</span></li><li><b>Jewellery</b><span>Building my own jewellery brand on Instagram, TikTok and Etsy</span></li><li><b>AI systems</b><span>Designing AI-assisted design workflows and an AI-run studio office of agents for The Modern Issue</span></li></ul></div></div></section></div>
+</div>
+<section class="wrap" id="detail" aria-live="polite"></section>
+</main>
+<footer><div class="wrap" id="foot"></div></footer>
+<div id="lens" aria-hidden="true"></div>
+<div id="box" role="dialog" aria-label="Enlarged spread"><img alt=""></div>
+<aside id="panel" aria-label="Control panel"><div class="bar" style="margin-top:0;justify-content:space-between"><h3>Control panel</h3><button id="closeP">Close</button></div><div id="pbody"></div><p id="msg" role="status"></p></aside>
+<script src="js/page-flip.browser.js"></script>
+<script>
+{
+const TABS=['Introduction','Technique','Floor Plan','Zoom In','Other'];
+const DEF={name:'Ekin Saribas',role:'Junior Architectural Designer | MSc Architecture, TU Delft',about:'',email:'',linkedin:'',portfolio:'',portrait:'img/portrait.jpg'};
+const $=s=>document.querySelector(s),el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
+const safe=u=>typeof u==='string'&&(/^img\/[\w.-]+$/.test(u)||/^\/_blob\/[\w-]+$/.test(u))?u:'';
+const https=u=>typeof u==='string'&&/^https:\/\//.test(u)?u:'';
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let site={...DEF},projects=[],db=null,assets=null,canEdit=false;
+const vis=()=>projects.filter(p=>!p.hidden).sort((a,b)=>(a.order??0)-(b.order??0));
+const rnd=(i,s)=>{const x=Math.sin(i*99.13+s)*43758.5;return x-Math.floor(x)};
+
+/* ---------- the booklet ---------- */
+const SPREADS=['contents','homs_1','homs_2','homs_3','homs_4','tigre_1','tigre_2','tigre_3','tigre_4','bond_1','bond_2','bond_3','bond_4','sequence_1','sequence_2','sequence_3','sequence_4','work_1','abastumani_1'];
+const PROJ={homs:'homs',tigre:'tigre',bond:'bond',sequence:'sequence',work:'bau',abastumani:'abastumani'};
+const LIST=['cover'];SPREADS.forEach(n=>LIST.push(n+'_L',n+'_R'));LIST.push('back');
+const flipEl=$('#flip');
+LIST.forEach((n,i)=>{const d=el('div','page');if(n==='cover'||n==='back')d.dataset.density='hard';const im=el('img');im.alt=n==='cover'?'Portfolio cover':'';im.dataset.src='pages/'+n+'.jpg';im.decoding='async';d.append(im);
+  if(n==='contents_L'){[['homs',125],['bond',264],['tigre',398],['sequence',531],['work',665]].forEach(([k,y],j)=>{const a=el('a','toc');a.href='#';a.style.top=(y-8)/842*100+'%';a.setAttribute('aria-label','Go to project '+(j+1));a.dataset.k=k;
+    ['mousedown','touchstart','pointerdown'].forEach(ev=>a.addEventListener(ev,e=>e.stopPropagation(),{passive:true}));
+    a.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();toSpread(k)});d.append(a)})}
+  flipEl.append(d)});
+const RATIO=1300/1838;let near=false,pf=null,cur=0;
+function dims(z){const st=$('#stage');const W=st.clientWidth,H=st.clientHeight-90;const h=z?Math.min(H*.96,(W*.96)/(2*RATIO)):Math.min(H*.5,(W*.5)/(2*RATIO));return{w:Math.round(h*RATIO*2),h:Math.round(h)}}
+function setSize(z){const d=dims(z);const st=$('#stage');flipEl.style.width=d.w+'px';flipEl.style.height=d.h+'px';$('#zw').style.width=d.w+'px';dispatchEvent(new Event('resize'));return d}
+let zoomT=0;
+function zoom(z){if(z===near)return;zoomT=performance.now();const a=dims(near),b=setSize(z);near=z;$('#stage').classList.toggle('near',z);if(!z&&typeof setMag==='function')setMag(false);if(!z)setTimeout(placeInvite,1050);document.body.classList.toggle('near',z);$('#zoomOut').hidden=!z;
+  const zw=$('#zw');const rot=v=>v?0:-5;zw.classList.remove('anim');zw.style.transform=`scale(${a.w/b.w}) rotate(${rot(!z)}deg)`;zw.getBoundingClientRect();
+  if(!reduce){zw.classList.add('anim')}zw.style.transform=`scale(1) rotate(${rot(z)}deg)`;ui()}
+function shift(){const n=LIST.length;const s=$('#shift');s.style.transform=cur===0?'translateX(-25%)':cur>=n-1?'translateX(25%)':'none'}
+function spreadAt(i){if(i<1)return null;const k=Math.floor((i-1)/2);return SPREADS[k]||null}
+function feed(){document.querySelectorAll('#flip .page img').forEach((im,i)=>{if(!im.src&&Math.abs(i-cur)<=10)im.src=im.dataset.src})}
+function ui(){feed();
+  const sp=spreadAt(cur%2?cur:cur-1)||spreadAt(cur);const pid=sp?PROJ[sp.split('_')[0]]:null;
+  const t=$('#tag'),list=vis(),i=pid?list.findIndex(p=>p.id===pid):-1;
+  if(i>=0){const p=list[i];t.textContent='Project page →';t.dataset.id=p.id;t.hidden=false}else t.hidden=true;
+  const sec=!near?null:cur===0?'Cover':cur>=LIST.length-1?'Back cover':sp==='intro'?'Introduction':sp==='contents'?'Contents':(i>=0?list[i].title:'');const c=$('#count');c.replaceChildren();if(!sec){c.textContent='Swipe to leaf through, click to pick it up'}else{c.append(document.createTextNode('Selected Works 2026 | '),el('b',null,sec))}
+  [...$('#chips').children].forEach(b=>{const on=b.dataset.id===pid||(b.dataset.id==='contents'&&sp==='contents');b.classList.toggle('on',on);b.setAttribute('aria-current',on)});shift();
+}
+function go(d){if(!pf)return;d>0?pf.flipNext():pf.flipPrev()}
+function toSpread(key){const k=SPREADS.findIndex(n=>n===key||n.startsWith(key+'_'));if(k<0)return;const wasNear=near;zoom(true);setTimeout(()=>pf.flip(1+k*2),wasNear||reduce?0:1050)}
+function jump(id){const key=Object.keys(PROJ).find(k=>PROJ[k]===id);if(key)toSpread(key)}
+function chips(){const c=$('#chips');c.replaceChildren();const ct=el('button',null,'Contents');ct.dataset.id='contents';ct.onclick=()=>{if(document.body.classList.contains('detail')){location.hash='book';setTimeout(()=>toSpread('contents'),50)}else toSpread('contents')};c.append(ct);vis().forEach(p=>{const b=el('button',null,p.title||'');b.dataset.id=p.id;b.onclick=()=>{if(document.body.classList.contains('detail'))location.hash='project-'+p.id;else jump(p.id)};c.append(b)});ui();markDetail()}
+function size(){}function show(){ui()}function buildBook(){chips();ui()}
+setSize(false);$('#zw').style.transform='rotate(-5deg)';
+pf=new St.PageFlip(flipEl,{width:650,height:919,size:'stretch',minWidth:120,maxWidth:3000,minHeight:170,maxHeight:4240,showCover:true,usePortrait:false,drawShadow:true,maxShadowOpacity:.45,flippingTime:reduce?1:950,mobileScrollSupport:false,clickEventForward:true,useMouseEvents:true,swipeDistance:30,autoSize:true});
+pf.loadFromHTML(document.querySelectorAll('#flip .page'));
+pf.on('flip',e=>{cur=e.data;ui();setTimeout(placeInvite,1050)});
+{let x0=null,y0=0;const c=$('#catch');c.addEventListener('pointerdown',e=>{x0=e.clientX;y0=e.clientY});c.addEventListener('pointerup',e=>{if(x0==null)return;const dx=e.clientX-x0,dy=e.clientY-y0;x0=null;if(Math.abs(dx)>25&&Math.abs(dx)>Math.abs(dy)){dx<0?pf.flipNext():pf.flipPrev();return}zoom(true)});c.addEventListener('pointercancel',()=>{x0=null})}
+function placeInvite(){if(near)return;const iv=$('#invite'),st=$('#stage').getBoundingClientRect(),r=bookRect();if(!r)return;
+  const gap=48,avail=r.l-st.left-gap-24;
+  if(avail>=230&&innerWidth>760){const w=Math.min(380,avail);iv.style.width=w+'px';iv.style.whiteSpace='normal';iv.style.textAlign='left';iv.style.left=(r.l-st.left-gap-w)+'px';iv.style.top=(r.t-st.top)+'px'}
+  else{iv.style.width=Math.min(st.width*.9,r.r-r.l+200)+'px';iv.style.textAlign='center';iv.style.left=((r.l+r.r)/2-st.left-iv.offsetWidth/2)+'px';iv.style.top=Math.max(12,r.t-st.top-iv.offsetHeight-32)+'px'}
+  iv.classList.add('ready')}
+/* magnifier: a loupe over the pages using the full-resolution scans */
+let mag=false,power=2.6;const lens=$('#lens');const hiSrc=src=>src.replace('pages/','pages/hi/');
+function setMag(on){mag=on&&near;$('#stage').classList.toggle('mag',mag);$('#magBtn').setAttribute('aria-pressed',mag);$('#magBtn').textContent=mag?'Magnify on':'Magnify';if(!mag)lens.style.display='none'}
+function pageAt(x,y){let best=null,bz=-1e9;document.querySelectorAll('#flip .stf__item').forEach(it=>{const cs=getComputedStyle(it);if(cs.display==='none'||cs.visibility==='hidden')return;const r=it.getBoundingClientRect();if(!(x>=r.left&&x<=r.right&&y>=r.top&&y<=r.bottom))return;const z=parseInt(cs.zIndex)||0;const im=it.querySelector('img');if(im&&im.dataset.src&&z>=bz){bz=z;best={r,src:im.dataset.src}}});
+  const top=document.elementsFromPoint(x,y).find(e=>e.classList&&e.classList.contains('stf__item'));if(top){const im=top.querySelector('img');if(im&&im.dataset.src)return{r:top.getBoundingClientRect(),src:im.dataset.src}}return best}
+function moveLens(e){if(!mag)return;const h=pageAt(e.clientX,e.clientY);if(!h){lens.style.display='none';return}
+  const R=130,url=hiSrc(h.src);if(lens.dataset.u!==url){lens.dataset.u=url;lens.style.backgroundImage=`url("${url}"),url("${h.src}")`}
+  const w=h.r.width*power,ht=h.r.height*power,px=(e.clientX-h.r.left)*power,py=(e.clientY-h.r.top)*power;
+  lens.style.backgroundSize=`${w}px ${ht}px,${w}px ${ht}px`;lens.style.backgroundPosition=`${R-px}px ${R-py}px,${R-px}px ${R-py}px`;
+  lens.style.left=e.clientX+'px';lens.style.top=e.clientY+'px';lens.style.display='block'}
+$('#stage').addEventListener('pointermove',moveLens);
+$('#stage').addEventListener('pointerleave',()=>{lens.style.display='none'});
+$('#stage').addEventListener('wheel',e=>{if(!mag)return;e.preventDefault();power=Math.max(1.6,Math.min(5,power*(e.deltaY<0?1.12:1/1.12)));moveLens(e)},{passive:false});
+$('#stage').addEventListener('pointerdown',e=>{if(mag&&pageAt(e.clientX,e.clientY)){e.stopPropagation();e.preventDefault()}},true);
+$('#stage').addEventListener('click',e=>{if(mag&&pageAt(e.clientX,e.clientY)){e.stopPropagation();e.preventDefault()}},true);
+$('#flip').addEventListener('dblclick',e=>{if(near){setMag(!mag);moveLens(e)}});
+$('#magBtn').onclick=()=>setMag(!mag);
+addEventListener('keydown',e=>{if((e.key==='m'||e.key==='M')&&near&&!e.target.closest('input,textarea')){setMag(!mag)}});
+function bookRect(){let r=null;document.querySelectorAll('#flip .stf__item').forEach(it=>{if(getComputedStyle(it).display==='none')return;const b=it.getBoundingClientRect();if(!b.width)return;r=r?{l:Math.min(r.l,b.left),t:Math.min(r.t,b.top),r:Math.max(r.r,b.right),b:Math.max(r.b,b.bottom)}:{l:b.left,t:b.top,r:b.right,b:b.bottom}});return r}
+$('#stage').addEventListener('click',e=>{if(!near||e.target.closest('button,a,#catch')||performance.now()-zoomT<600)return;const r=bookRect();if(!r)return;const m=8;if(e.clientX<r.l-m||e.clientX>r.r+m||e.clientY<r.t-m||e.clientY>r.b+m){e.stopPropagation();zoom(false)}},true);
+$('#zoomOut').onclick=()=>zoom(false);$('#prev').onclick=()=>go(-1);$('#next').onclick=()=>go(1);
+$('#stage').addEventListener('keydown',e=>{if(e.key==='ArrowRight'){go(1);e.preventDefault()}if(e.key==='ArrowLeft'){go(-1);e.preventDefault()}if(e.key==='Escape')zoom(false);if(e.key==='Enter'&&!near)zoom(true)});
+$('#tag').onclick=()=>{location.hash='project-'+$('#tag').dataset.id};
+new ResizeObserver(()=>{setSize(near);setTimeout(placeInvite,60)}).observe($('#stage'));
+setTimeout(placeInvite,300);setTimeout(placeInvite,1150);
+addEventListener('load',()=>{const ims=[...document.querySelectorAll('#flip .page img')];let k=0;const next=()=>{while(k<ims.length&&ims[k].src)k++;if(k>=ims.length)return;const im=ims[k];im.src=im.dataset.src;im.onload=im.onerror=()=>setTimeout(next,60)};setTimeout(next,800)});
+ui();
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}));
+function detail(id){
+  const list=vis(),i=list.findIndex(p=>p.id===id),p=list[i],D=$('#detail');D.replaceChildren();
+  if(!p){D.append(el('p','note',projects.length?'Project not found.':'Loading…'));return}
+  const bk=el('button','backbtn','← Back to the book');bk.onclick=()=>{location.hash='book'};D.append(bk);
+  const h=el('div','dhead');const L=el('div');L.append(el('span','num',String(i+1).padStart(2,'0')),el('h1',null,p.title||''),el('p','dtag',p.tagline||''),el('p','dsum',p.summary||''));
+  const dl=el('dl','facts');[['Type',p.kind],['Location',p.place],['Year',p.year],['Context',p.context],['Tutors',p.tutors],['Team',p.team],['Software',p.software]].forEach(([k,v])=>{if(v){const d=el('div');d.append(el('dt',null,k),el('dd',null,v));dl.append(d)}});
+  h.append(L,dl);D.append(h);
+  const sh=el('div','sheets');(p.spreads||[]).filter(s=>safe(s.src)).forEach((s,j)=>{const f=el('figure','sheet rv');f.style.setProperty('--r',((rnd(j,3)-.5)*1.2).toFixed(2)+'deg');const im=el('img');im.loading='lazy';im.alt=(p.title||'')+' – '+(s.tab||'');im.src=safe(s.src);const fc=el('figcaption');fc.append(el('span','lbl',s.tab||''),document.createTextNode(s.caption||''));f.append(im,fc);f.onclick=()=>{$('#box img').src=im.src;$('#box').classList.add('on')};sh.append(f);io.observe(f)});D.append(sh);
+  const pn=el('div','pn');if(list[i-1]){const b=el('button',null,'← '+list[i-1].title);b.onclick=()=>{location.hash='project-'+list[i-1].id};pn.append(b)}else pn.append(el('span'));
+  if(list[i+1]){const b=el('button',null,list[i+1].title+' →');b.onclick=()=>{location.hash='project-'+list[i+1].id};pn.append(b)}D.append(pn);
+}
+function markDetail(){const m=location.hash.match(/^#project-(.+)$/);if(!m)return;[...document.querySelectorAll('#chips button')].forEach(b=>{const on=b.dataset.id===m[1];b.classList.toggle('on',on);b.setAttribute('aria-current',on)})}
+function route(){const h=location.hash.slice(1);if(h.startsWith('project-')){document.body.classList.add('detail');detail(h.slice(8));scrollTo(0,0);markDetail()}else{document.body.classList.remove('detail');if(h==='about'||h==='contact')$('#about').scrollIntoView();size();show()}}
+addEventListener('hashchange',route);
+$('#box').onclick=()=>$('#box').classList.remove('on');addEventListener('keydown',e=>{if(e.key==='Escape')$('#box').classList.remove('on')});
+function renderSite(){
+  $('#atext').textContent=site.about||'';
+  const c=$('#contact');c.replaceChildren();
+  if(site.email){const a=el('a',null,site.email);a.href='mailto:'+site.email;c.append(a)}
+  if(https(site.linkedin)){const a=el('a',null,'LinkedIn');a.href=https(site.linkedin);c.append(a)}
+  if(https(site.portfolio)){const a=el('a',null,'Behance');a.href=https(site.portfolio);c.append(a)}
+  $('#foot').textContent='© '+new Date().getFullYear()+' '+(site.name||'Ekin Saribas');
+}
+
+const msg=t=>{$('#msg').textContent=t},pb=$('#pbody');
+$('#editBtn').onclick=()=>{$('#panel').classList.add('on');listView()};$('#closeP').onclick=()=>$('#panel').classList.remove('on');
+function field(l,v,m){const w=el('div');const i=m?el('textarea'):el('input');i.value=v||'';w.append(el('label',null,l),i);return[w,i]}
+async function upload(f){if(!assets)throw{code:'no permission to upload'};const r=await assets.upload(f);return'/_blob/'+r.id}
+function picker(l,cv,on){const w=el('div');w.append(el('label',null,l));const r=el('div','srow');const im=el('img');im.alt='';im.src=safe(cv);const i=el('input');i.type='file';i.accept='image/*';i.onchange=async()=>{const f=i.files[0];if(!f)return;msg('Uploading…');try{const u=await upload(f);im.src=u;on(u);msg('Uploaded. Remember to save.')}catch(e){msg('Upload failed: '+(e.code||e.message))}};r.append(im,i,el('span'));w.append(r);return w}
+function listView(){
+  pb.replaceChildren();msg('');const bar=el('div','bar');const sb=el('button',null,'Book pages, about and contact');sb.onclick=siteView;const ab=el('button',null,'+ Add project');ab.onclick=()=>editView({id:null,spreads:[],order:projects.length?Math.max(...projects.map(p=>p.order||0))+1:1});bar.append(sb,ab);pb.append(bar,el('h3',null,'Projects'));
+  const all=[...projects].sort((a,b)=>(a.order??0)-(b.order??0));if(!all.length)pb.append(el('p','note','No projects yet.'));
+  all.forEach((p,i)=>{const r=el('div','prow'),t=el('div');t.append(el('strong',null,p.title||'Untitled'));if(p.hidden)t.append(el('span','hid','hidden'));const c=el('div','ctl');const u=el('button',null,'↑'),d=el('button',null,'↓'),e=el('button',null,'Edit');u.setAttribute('aria-label','Move up');d.setAttribute('aria-label','Move down');u.disabled=!i;d.disabled=i===all.length-1;u.onclick=()=>swap(all[i],all[i-1]);d.onclick=()=>swap(all[i],all[i+1]);e.onclick=()=>editView(structuredClone(p));c.append(u,d,e);r.append(t,c);pb.append(r)});
+}
+async function swap(a,b){msg('Saving…');try{const oa=a.order??0,ob=b.order??0;await db.doc('projects/'+a.id).update({order:ob});await db.doc('projects/'+b.id).update({order:oa===ob?ob+1:oa});msg('Order saved.')}catch(e){msg('Could not save: '+(e.code||e.message))}}
+function deskEditor(o,title){
+  const w=el('div');w.append(el('h3',null,title||'Desk items around the booklet (sketches, photos)'),el('p','note','Up to 6. Leave empty to use pages from this project automatically.'));const l=el('div');w.append(l);o.desk=o.desk||[];
+  const draw=()=>{l.replaceChildren();o.desk.forEach((d,i)=>{const r=el('div','srow');const im=el('img');im.alt='';im.src=safe(d.src);const m=el('div');const se=el('select');[['print','Print'],['sketch','Sketch on paper'],['trace','Tracing paper'],['photo','Photo']].forEach(([v,t])=>{const op=el('option',null,t);op.value=v;op.selected=d.c===v;se.append(op)});se.onchange=()=>d.c=se.value;const cp=el('input');cp.placeholder='Handwritten note (optional)';cp.value=d.cap||'';cp.oninput=()=>d.cap=cp.value;m.append(se,cp);const x=el('button','danger','✕');x.setAttribute('aria-label','Remove');x.onclick=()=>{o.desk.splice(i,1);draw()};r.append(im,m,x);l.append(r)})};draw();
+  const add=el('input');add.type='file';add.accept='image/*';add.multiple=true;add.onchange=async()=>{for(const f of[...add.files]){if(o.desk.length>=6)break;msg('Uploading '+f.name+'…');try{o.desk.push({src:await upload(f),c:'sketch',cap:''});draw()}catch(e){msg('Upload failed: '+(e.code||e.message));return}}msg('Added. Remember to save.');add.value=''};
+  w.append(el('label',null,'Add sketches or photos'),add);return w;
+}
+function siteView(){
+  pb.replaceChildren();const s={...site};const bk=el('button',null,'← Back');bk.onclick=listView;pb.append(bk,el('h3',null,'Book pages, about and contact'));
+  
+  const keys=[['name','Name'],['role','Title line'],['about','About me',1],['email','Email'],['linkedin','LinkedIn URL (https://…)'],['portfolio','Behance URL (https://…)']];const ins={};keys.forEach(([k,l,m])=>{const[w,i]=field(l,s[k],m);ins[k]=i;pb.append(w)});
+  const sv=el('button',null,'Save');sv.onclick=async()=>{keys.forEach(([k])=>s[k]=ins[k].value.trim());msg('Saving…');try{await db.doc('site/main').set(s);msg('Saved.')}catch(e){msg('Could not save: '+(e.code||e.message))}};const bar=el('div','bar');bar.append(sv);pb.append(bar);
+}
+function editView(p){
+  pb.replaceChildren();const bk=el('button',null,'← Back');bk.onclick=listView;pb.append(bk,el('h3',null,p.id?'Edit project':'New project'));
+  const keys=[['title','Title'],['tagline','Headline'],['summary','Description',1],['kind','Type'],['place','Location'],['year','Year'],['context','Context (studio, partners)'],['tutors','Tutors'],['team','Team'],['software','Software']];const ins={};keys.forEach(([k,l,m])=>{const[w,i]=field(l,p[k],m);ins[k]=i;pb.append(w)});
+  pb.append(picker('Cover image',p.cover,u=>p.cover=u));
+  const hl=el('label');const cb=el('input');cb.type='checkbox';cb.style.width='auto';cb.checked=!!p.hidden;hl.append(cb,document.createTextNode(' Hide from the book'));pb.append(hl);
+  pb.append(el('h3',null,'Spreads (landscape, two pages each)'));const sl=el('div');pb.append(sl);
+  const draw=()=>{sl.replaceChildren();(p.spreads||[]).forEach((s,i)=>{const r=el('div','srow');const im=el('img');im.alt='';im.src=safe(s.src);const m=el('div');const se=el('select');TABS.forEach(t=>{const o=el('option',null,t);o.selected=s.tab===t;se.append(o)});se.onchange=()=>s.tab=se.value;const cp=el('input');cp.placeholder='Caption (optional)';cp.value=s.caption||'';cp.oninput=()=>s.caption=cp.value;m.append(se,cp);
+    const c=el('div','ctl');const u=el('button',null,'↑'),d=el('button',null,'↓'),x=el('button','danger','✕');u.setAttribute('aria-label','Move up');d.setAttribute('aria-label','Move down');x.setAttribute('aria-label','Remove');u.onclick=()=>{if(i){[p.spreads[i-1],p.spreads[i]]=[p.spreads[i],p.spreads[i-1]];draw()}};d.onclick=()=>{if(i<p.spreads.length-1){[p.spreads[i+1],p.spreads[i]]=[p.spreads[i],p.spreads[i+1]];draw()}};x.onclick=()=>{p.spreads.splice(i,1);draw()};c.append(u,d,x);r.append(im,m,c);sl.append(r)})};draw();
+  const add=el('input');add.type='file';add.accept='image/*';add.multiple=true;add.onchange=async()=>{p.spreads=p.spreads||[];for(const f of[...add.files]){msg('Uploading '+f.name+'…');try{p.spreads.push({src:await upload(f),tab:'Other',caption:''});draw()}catch(e){msg('Upload failed: '+(e.code||e.message));return}}msg('Added. Remember to save.');add.value=''};pb.append(el('label',null,'Add spreads (pick several)'),add);
+  const bar=el('div','bar');const sv=el('button',null,'Save project');sv.onclick=async()=>{keys.forEach(([k])=>p[k]=ins[k].value.trim());p.hidden=cb.checked;if(!p.title){msg('Add a title first.');return}const{id,...data}=p;data.spreads=(data.spreads||[]).map(s=>({src:s.src,tab:s.tab||'Other',caption:s.caption||''}));msg('Saving…');try{const ref=id?db.doc('projects/'+id):db.collection('projects').doc();await ref.set(data);p.id=ref.id;msg('Saved.');editView(p)}catch(e){msg('Could not save: '+(e.code||e.message))}};bar.append(sv);
+  if(p.id){const del=el('button','danger','Delete project');let arm=false;del.onclick=async()=>{if(!arm){arm=true;del.textContent='Click again to delete for good';return}msg('Deleting…');try{await db.doc('projects/'+p.id).delete();msg('Deleted.');listView()}catch(e){msg('Could not delete: '+(e.code||e.message))}};bar.append(del)}pb.append(bar);
+}
+
+renderSite();buildBook();route();
+(async()=>{
+  db=await claude.use('db');const user=await claude.use('user');
+  if(!db){$('#count').textContent='Sign in to open the full book.';return}
+  const tm=setTimeout(()=>{$('#count').textContent='The book can’t be reached right now.'},10000);
+  db.doc('site/main').onSnapshot(s=>{if(s.exists){site={...DEF,...s.data()};renderSite();buildBook()}},()=>{});
+  db.collection('projects').onSnapshot(s=>{if(!s.metadata.fromCache)clearTimeout(tm);projects=s.docs.map(d=>({id:d.id,...d.data()}));buildBook();if(document.body.classList.contains('detail'))route();if($('#panel').classList.contains('on')&&!pb.querySelector('textarea'))listView()},e=>{clearTimeout(tm);$('#count').textContent='The book couldn’t load ('+e.code+').'});
+  try{canEdit=!!(user&&await user.canEdit())}catch{canEdit=false}
+  if(canEdit){$('#editBtn').hidden=false;try{assets=await claude.use('assets')}catch{assets=null}}
+})();
+}
+</script>
+</body>
+</html>
