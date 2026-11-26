@@ -8,17 +8,19 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
-@font-face{font-family:"YuGothicP";src:url(fonts/yugothic-regular.ttf) format("truetype");font-weight:400;font-display:swap}
-@font-face{font-family:"YuGothicP";src:url(fonts/yugothic-bold.ttf) format("truetype");font-weight:700;font-display:swap}
+@font-face{font-family:"YuG";src:local("Yu Gothic Light"),local("YuGothic-Light"),local("YuGothic Light"),url(fonts/zen-kaku-gothic-new-latin-300-normal.woff2) format("woff2");font-weight:300;font-display:swap}
+@font-face{font-family:"YuG";src:local("Yu Gothic Regular"),local("YuGothic-Regular"),local("YuGothic Regular"),local("Yu Gothic"),url(fonts/zen-kaku-gothic-new-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"YuG";src:local("Yu Gothic Medium"),local("YuGothic-Medium"),local("YuGothic Medium"),url(fonts/zen-kaku-gothic-new-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"YuG";src:local("Yu Gothic Bold"),local("YuGothic-Bold"),local("YuGothic Bold"),url(fonts/zen-kaku-gothic-new-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
 /* VOICE: quiet editorial, a printed booklet photographed on black
    IDEA: her portfolio as a real uncoated-paper booklet that you pick up (zoom) and leaf through (curling page flip)
    PICTURE: the booklet small and far on a grainy black ground, then close and sharp
-   COLOUR and TYPE: black grain, off-white paper, her own page colours; Zen Kaku Gothic New
+   COLOUR and TYPE: black grain, off-white paper, her own page colours; Yu Gothic (as in the InDesign file)
    LAYOUT: stage first (book far), paper tag to open the project, project pages below */
 :root{color-scheme:dark;--bg:#0b0b0b;--ink:#efece6;--mute:#8f8b85;--line:#2a2826;--paper:#eceae6;--thread:#b9412f}
 *{box-sizing:border-box;min-width:0}
 html{scroll-padding-top:16px}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "YuGothicP","Yu Gothic","Zen Kaku Gothic New",system-ui,sans-serif;overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "YuG",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip}
 a{color:inherit}img{display:block;max-width:100%}
 body{--sw:250px;--fs:17px;background:#0d0d0d url(pages/desk.jpg) 0 0/600px repeat}
 body:not(.detail)::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse at 58% 48%,transparent 35%,rgba(0,0,0,.55))}
@@ -28,7 +30,7 @@ body.near{--sw:180px;--fs:13px}
 main,footer{margin-left:var(--sw);transition:margin-left .9s cubic-bezier(.65,0,.25,1)}
 #side .brand{display:flex;flex-direction:column;gap:2px;font-size:var(--fs);line-height:1.3;transition:font-size .9s}
 #side nav{display:flex;flex-direction:column;align-items:flex-start;gap:2px;margin:0}
-#side nav a,#side nav button{font-size:var(--fs);line-height:1.6;min-height:0;padding:2px 0;text-align:left;transition:font-size .25s cubic-bezier(.3,0,.2,1),color .25s}
+#side nav a,#side nav button{font-weight:300;font-size:var(--fs);line-height:1.6;min-height:0;padding:2px 0;text-align:left;transition:font-size .25s cubic-bezier(.3,0,.2,1),color .25s}
 #side nav a:hover,#side nav button:hover,#side nav a:focus-visible,#side nav button:focus-visible{font-size:calc(var(--fs) * 1.35);color:var(--ink)}
 #side .plist{opacity:0;pointer-events:none;transition:opacity .6s}
 body.near #side .plist,body.detail #side .plist{opacity:1;pointer-events:auto}
@@ -36,8 +38,8 @@ body.near #side .plist,body.detail #side .plist{opacity:1;pointer-events:auto}
 @media(max-width:760px){#side{position:sticky;bottom:auto;width:auto;flex-direction:row;flex-wrap:wrap;gap:8px 20px;padding:12px 16px;background:var(--bg)}#side nav{flex-direction:row;flex-wrap:wrap;gap:0 14px}#side .plist{display:none}main,footer{margin-left:0}body,body.near{--fs:14px}}
 .wrap{max-width:1240px;margin:0 auto;padding:0 max(5vw,16px)}
 .brand{text-decoration:none;color:var(--mute)}.brand b{color:var(--ink);font-weight:700}
-nav a{text-decoration:none;color:var(--mute)}nav a.on{color:var(--ink);font-weight:700}nav a:hover{color:var(--ink)}
-button{font:inherit;font-size:14px;font-weight:400;min-height:40px;padding:0 6px;border:0;background:none;color:var(--mute);cursor:pointer;letter-spacing:.01em}
+nav a{text-decoration:none;color:var(--mute);font-weight:300}nav a.on{color:var(--ink);font-weight:700}nav a:hover{color:var(--ink)}
+button{font:inherit;font-size:14px;font-weight:300;min-height:40px;padding:0 6px;border:0;background:none;color:var(--mute);cursor:pointer;letter-spacing:.01em}
 button:hover{color:var(--ink)}
 button.on,button[aria-current="true"]{color:var(--ink);font-weight:700}:focus-visible{outline:2px solid var(--thread);outline-offset:2px}
 #stage{position:relative;height:100vh;padding-bottom:56px;min-height:460px;overflow:hidden;background:transparent;display:grid;place-items:center;touch-action:pan-y}
@@ -48,7 +50,7 @@ button.on,button[aria-current="true"]{color:var(--ink);font-weight:700}:focus-vi
 #shift{filter:drop-shadow(1.5px 1px 0 #d9d6d0) drop-shadow(1.5px 1px 0 #c9c5be) drop-shadow(1px 1.5px 0 #b8b3ab) drop-shadow(0 2px 3px rgba(0,0,0,.55)) drop-shadow(10px 26px 34px rgba(0,0,0,.6));transition:transform 1s cubic-bezier(.45,0,.2,1)}
 #flip{margin:0 auto}
 #flip .page{background:#e9e7e3;overflow:hidden}
-#flip .page img{width:100%;height:100%;object-fit:cover;user-select:none;-webkit-user-drag:none;pointer-events:none}
+#flip .page{outline:1px solid transparent;backface-visibility:hidden}#flip .page img{backface-visibility:hidden;width:100%;height:100%;object-fit:cover;user-select:none;-webkit-user-drag:none;pointer-events:none}
 a.toc{position:absolute;left:14%;width:80%;height:13.5%;z-index:3;display:block;cursor:pointer;border-radius:2px}a.toc:hover{background:rgba(0,0,0,.035)}a.toc:focus-visible{outline:2px solid var(--thread)}
 #lens{position:fixed;z-index:30;width:260px;height:260px;border-radius:50%;pointer-events:none;display:none;background-repeat:no-repeat;background-color:#eceae6;box-shadow:0 0 0 1px rgba(255,255,255,.55),0 14px 40px rgba(0,0,0,.6);transform:translate(-50%,-50%)}
 #stage.mag #catch,#stage.mag #flip{cursor:none}
@@ -64,7 +66,7 @@ a.toc{position:absolute;left:14%;width:80%;height:13.5%;z-index:3;display:block;
 .stagebar{transition:opacity .5s}
 @media(max-width:760px){#invite{white-space:normal;width:90%}}
 #stage.near #catch{display:none}
-#zoomOut{position:absolute;right:max(5vw,16px);top:10px;z-index:6}
+#zoomOut{position:absolute;left:50%;transform:translateX(-50%);bottom:6px;top:auto;z-index:7;font-size:13px;min-height:36px}
 #zoomOut[hidden]{display:none}
 .stagebar{position:absolute;left:0;right:0;bottom:6px;z-index:6;display:flex;align-items:center;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;padding:0 max(5vw,16px);font-size:13px;color:var(--mute)}
 .stagebar .where b{color:var(--ink)}
@@ -76,7 +78,12 @@ a.toc{position:absolute;left:14%;width:80%;height:13.5%;z-index:3;display:block;
 .hintbar{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:14px 16px 6px;color:var(--mute);font-size:13px}
 .chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:6px 16px 30px}
 .chips button{min-height:36px;font-size:13px;border-color:var(--line);color:var(--mute)}.chips button.on,.chips button:hover{border-color:var(--ink);color:var(--ink);background:none}
-#detail{display:none;padding-block:clamp(28px,5vw,72px)}
+#detail{display:none;padding-block:0 clamp(28px,5vw,72px);max-width:1900px}
+.dbar{position:sticky;top:0;z-index:15;display:flex;align-items:center;justify-content:space-between;gap:8px 20px;flex-wrap:wrap;padding:12px 0;margin-bottom:clamp(20px,3vw,40px);background:rgba(255,255,255,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);font-size:14px}
+.dbar .grp{display:flex;align-items:center;gap:4px 14px;flex-wrap:wrap}
+.dbar button{font-size:14px;min-height:36px}.dbar .cnt{color:var(--mute);font-weight:300}
+.dbar button[aria-pressed="true"]{color:var(--ink);font-weight:700}
+body.dmag .sheet,body.dmag .sheet img{cursor:none}
 body.detail #detail{display:block}body.detail #home{display:none}
 body.detail{--bg:#fff;--ink:#231f20;--mute:#8a8684;--line:#e8e6e3;--soft:#4a4644;background:#fff;color:var(--ink);color-scheme:light}
 #side{--ink:#efece6;--mute:#8f8b85;mix-blend-mode:difference;color:var(--ink)}
@@ -92,7 +99,7 @@ body{transition:background-color .5s,color .5s}
 .facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 24px;margin:0;align-content:start;font-size:14px}
 .facts dt{color:var(--mute);font-size:13px}.facts dd{margin:0;font-weight:500}
 .sheets{display:grid;gap:clamp(20px,3vw,40px);margin-top:clamp(32px,5vw,64px)}
-.sheet{margin:0;background:none;padding:0;cursor:zoom-in}
+.sheet{margin:0;background:none;padding:0;cursor:zoom-in;position:relative}
 .sheet img{width:100%;height:auto}.sheet figcaption{color:var(--mute);font-size:13px;padding:10px 0 0}.sheet .lbl{font-weight:700;color:var(--ink);margin-right:10px}
 .pn{display:flex;justify-content:space-between;gap:12px;margin-top:48px;flex-wrap:wrap}
 .rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.1,1)}.rv.in{opacity:1;transform:none}
@@ -124,8 +131,8 @@ input,textarea,select{width:100%;font:inherit;font-size:16px;padding:8px 10px;bo
 </head>
 <body><script>(()=>{const SITE={"about": "I'm Ekin, an architectural designer with an MSc in Architecture from TU Delft. Across my studies I developed a sequence-led approach to design: reading how people move, pause and gather, and shaping spaces that unfold from the street to the most intimate room. From reconnecting the bazaar of Homs and stitching a cultural route through Brussels to growing a neighbourhood in Buenos Aires step by step and turning an Arnhem block from busy edge to calm courtyard, each project starts from what a place already has. Alongside architecture, I integrate AI systems into the design process and curate jewellery.", "email": "ekinecesaribas@gmail.com", "linkedin": "", "portfolio": "", "name": "Ekin Saribas", "role": "Junior Architectural Designer | MSc Architecture, TU Delft"},PROJ=[{"id": "homs", "order": 1, "title": "Reconnecting Homs", "tagline": "The city is damaged. The system is still there.", "summary": "Rather than rebuilding Homs Old Town as a collection of isolated objects, this project begins with the network that still connects it: the bazaar. I mapped surviving routes, workshops, courtyards and patterns of trade to find where a targeted intervention could restore continuity.\n\nAt the end of the bazaar, a ruined khan becomes a cultural centre with workshops, a library, auditorium, restaurant and public courtyard. Historic masonry defines the spatial sequence, while a new independent structure carries the programme.", "kind": "Public Building | Cultural Center – Reconstruction", "place": "Homs, Syria", "year": "2025–2026", "context": "TU Delft, UN-Habitat, Humane Urbanism", "tutors": "Job Schroën, Alessandra Navarro, Tosin Oshinowo", "team": "", "software": "", "cover": "img/homs_hero.jpg", "spreads": [{"src": "img/homs_1.jpg", "tab": "Introduction", "caption": ""}, {"src": "img/homs_2.jpg", "tab": "Technique", "caption": "Reading damage as a broken network"}, {"src": "img/homs_3.jpg", "tab": "Floor Plan", "caption": ""}, {"src": "img/homs_4.jpg", "tab": "Zoom In", "caption": ""}]}, {"id": "bond", "order": 3, "title": "The Bond", "tagline": "Stitching Brussels back together", "summary": "A cultural hub between the EU Quarter and its surrounding neighbourhood. The neighbourhood comes before the masterplan: separate plots become one shared ground, with a route that leads from the metro entrance through terraces to a courtyard, marking where people pass through and where they stop.", "kind": "Public Building | Cultural Hub", "place": "Brussels, Belgium", "year": "2024–25", "context": "TU Delft, MVRDV tutoring", "tutors": "", "team": "", "software": "", "cover": "img/bond_hero.jpg", "spreads": [{"src": "img/bond_1.jpg", "tab": "Introduction", "caption": ""}, {"src": "img/bond_2.jpg", "tab": "Technique", "caption": "The neighbourhood comes before the masterplan"}, {"src": "img/bond_3.jpg", "tab": "Floor Plan", "caption": ""}, {"src": "img/bond_4.jpg", "tab": "Zoom In", "caption": ""}]}, {"id": "tigre", "order": 2, "title": "Tigre Games", "tagline": "How do you add homes without taking away a neighbourhood?", "summary": "A fieldwork-based academic proposal for El Garrote, Buenos Aires. The plan becomes the game: residents combine housing modules and cards to grow the neighbourhood step by step, adding homes, shared space and services without displacing the people who live there.", "kind": "Residential | Slum Redevelopment", "place": "Buenos Aires, Argentina", "year": "2025", "context": "TU Delft, FADU UBA", "tutors": "", "team": "", "software": "", "cover": "img/tigre_hero.jpg", "spreads": [{"src": "img/tigre_1.jpg", "tab": "Introduction", "caption": ""}, {"src": "img/tigre_2.jpg", "tab": "Technique", "caption": "The plan becomes the game"}, {"src": "img/tigre_3.jpg", "tab": "Floor Plan", "caption": ""}, {"src": "img/tigre_4.jpg", "tab": "Zoom In", "caption": ""}]}, {"id": "sequence", "order": 4, "title": "The Sequence", "tagline": "City chaos, but make it healing", "summary": "An urban block in Arnhem built on a mapping of movement and noise. The design moves from the active Rozet edge, through a planted courtyard, to quieter housing and treatment spaces.", "kind": "Residential-Commercial | Urban Block Design", "place": "Arnhem, Netherlands", "year": "2023–24", "context": "TU Eindhoven, BSc end project", "tutors": "Dario Sposini", "team": "", "software": "", "cover": "img/sequence_hero.jpg", "spreads": [{"src": "img/sequence_1.jpg", "tab": "Introduction", "caption": ""}, {"src": "img/sequence_2.jpg", "tab": "Technique", "caption": "Mapping the transition from activity to calm"}, {"src": "img/sequence_3.jpg", "tab": "Floor Plan", "caption": ""}, {"src": "img/sequence_4.jpg", "tab": "Zoom In", "caption": ""}]}, {"id": "bau", "order": 5, "title": "BAU Munich", "tagline": "Exhibition stand, professional work", "summary": "Independently designed a complete exhibition stand for BAU Munich 2025, one of the leading international trade fairs for architecture, materials and construction: the visitor sequence and the stand interior, as well as the posters, flyers and banners, within two days and on a tight budget.", "kind": "Professional · Individual", "place": "Munich, Germany", "year": "2025", "context": "Professional work", "tutors": "", "team": "", "software": "", "cover": "img/work_hero.jpg", "spreads": [{"src": "img/work_1.jpg", "tab": "Introduction", "caption": "Exhibition stand design, BAU Munich 2025"}]}, {"id": "abastumani", "order": 6, "title": "Abastumani Hotel", "tagline": "Hotel and spa interiors in a heritage building", "summary": "Contributed to the Abastumani hotel project in Georgia: concepts, moodboards, material palettes and preliminary models, with interior, exterior and contextual design studies. Worked in Revit on the spa and pool design; the interior materiality and moodboard were my individual part within the team.", "kind": "Professional | Hotel & Spa Interiors", "place": "Abastumani, Georgia", "year": "", "context": "Professional work", "tutors": "", "team": "", "software": "Revit", "cover": "img/abastumani_1.jpg", "spreads": [{"src": "img/abastumani_1.jpg", "tab": "Introduction", "caption": "Public, semi-public and private interiors with their materiality"}]}];const db={doc:()=>({onSnapshot:f=>{f({exists:true,data:()=>SITE});return()=>{}}}),collection:()=>({onSnapshot:f=>{f({docs:PROJ.map(p=>({id:p.id,data:()=>p})),metadata:{fromCache:false}});return()=>{}}})};window.claude={use:async n=>n==='db'?db:n==='user'?{canEdit:async()=>false}:null}})()</script>
 <aside id="side"><a class="brand" href="#book"><span>Selected Works 2026</span><b>Ekin Saribas</b></a>
-<nav aria-label="Site"><a href="#book" class="on">Portfolio</a><a href="#about">About</a><a href="#contact">Contact</a><button id="editBtn" hidden>Edit</button></nav>
-<div class="plist"><p class="lab">In the booklet</p><nav id="chips" aria-label="Projects"></nav></div></aside>
+<nav aria-label="Site"><a href="#book" class="on" id="navBook">Portfolio</a><a href="#project-homs" id="navProj">Project pages</a><a href="#about">About</a><a href="#contact">Contact</a><button id="editBtn" hidden>Edit</button></nav>
+<div class="plist"><p class="lab" id="plab">In the booklet</p><nav id="chips" aria-label="Projects"></nav></div></aside>
 <main>
 <div id="home">
   <div id="stage" aria-label="Portfolio booklet. Click it to pick it up; then click or drag a page corner to turn the page." tabindex="0">
@@ -164,16 +171,18 @@ LIST.forEach((n,i)=>{const d=el('div','page');if(n==='cover'||n==='back')d.datas
     ['mousedown','touchstart','pointerdown'].forEach(ev=>a.addEventListener(ev,e=>e.stopPropagation(),{passive:true}));
     a.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();toSpread(k)});d.append(a)})}
   flipEl.append(d)});
-const RATIO=1300/1838;let near=false,pf=null,cur=0;
-function dims(z){const st=$('#stage');const W=st.clientWidth,H=st.clientHeight-90;const h=z?Math.min(H*.96,(W*.96)/(2*RATIO)):Math.min(H*.5,(W*.5)/(2*RATIO));return{w:Math.round(h*RATIO*2),h:Math.round(h)}}
+const RATIO=1800/2545;let near=false,pf=null,cur=0;
+function dims(z){const st=$('#stage');const W=st.clientWidth,H=st.clientHeight-(z?64:90);const h=z?Math.min(H*.985,(W*.985)/(2*RATIO)):Math.min(H*.5,(W*.5)/(2*RATIO));return{w:Math.round(h*RATIO*2),h:Math.round(h)}}
 function setSize(z){const d=dims(z);const st=$('#stage');flipEl.style.width=d.w+'px';flipEl.style.height=d.h+'px';$('#zw').style.width=d.w+'px';dispatchEvent(new Event('resize'));return d}
 let zoomT=0;
 function zoom(z){if(z===near)return;zoomT=performance.now();const a=dims(near),b=setSize(z);near=z;$('#stage').classList.toggle('near',z);if(!z&&typeof setMag==='function')setMag(false);if(!z)setTimeout(placeInvite,1050);document.body.classList.toggle('near',z);$('#zoomOut').hidden=!z;
   const zw=$('#zw');const rot=v=>v?0:-5;zw.classList.remove('anim');zw.style.transform=`scale(${a.w/b.w}) rotate(${rot(!z)}deg)`;zw.getBoundingClientRect();
-  if(!reduce){zw.classList.add('anim')}zw.style.transform=`scale(1) rotate(${rot(z)}deg)`;ui()}
+  if(!reduce){zw.classList.add('anim')}zw.style.transform=`scale(1) rotate(${rot(z)}deg)`;ui();setTimeout(feed,z?1050:0)}
 function shift(){const n=LIST.length;const s=$('#shift');s.style.transform=cur===0?'translateX(-25%)':cur>=n-1?'translateX(25%)':'none'}
 function spreadAt(i){if(i<1)return null;const k=Math.floor((i-1)/2);return SPREADS[k]||null}
-function feed(){document.querySelectorAll('#flip .page img').forEach((im,i)=>{if(!im.src&&Math.abs(i-cur)<=10)im.src=im.dataset.src})}
+const want=(im,i)=>near&&Math.abs(i-cur)<=3?im.dataset.src:im.dataset.src.replace('pages/','pages/s/');
+function setSrc(im,u){if(im.dataset.cur===u)return;im.dataset.cur=u;if(!im.getAttribute('src')){im.src=u;return}const t=new Image();t.onload=()=>{if(im.dataset.cur===u)im.src=u};t.src=u}
+function feed(){document.querySelectorAll('#flip .page img').forEach((im,i)=>{if(Math.abs(i-cur)<=10||im.getAttribute('src'))setSrc(im,want(im,i))})}
 function ui(){feed();
   const sp=spreadAt(cur%2?cur:cur-1)||spreadAt(cur);const pid=sp?PROJ[sp.split('_')[0]]:null;
   const t=$('#tag'),list=vis(),i=pid?list.findIndex(p=>p.id===pid):-1;
@@ -221,23 +230,35 @@ $('#stage').addEventListener('keydown',e=>{if(e.key==='ArrowRight'){go(1);e.prev
 $('#tag').onclick=()=>{location.hash='project-'+$('#tag').dataset.id};
 new ResizeObserver(()=>{setSize(near);setTimeout(placeInvite,60)}).observe($('#stage'));
 setTimeout(placeInvite,300);setTimeout(placeInvite,1150);
-addEventListener('load',()=>{const ims=[...document.querySelectorAll('#flip .page img')];let k=0;const next=()=>{while(k<ims.length&&ims[k].src)k++;if(k>=ims.length)return;const im=ims[k];im.src=im.dataset.src;im.onload=im.onerror=()=>setTimeout(next,60)};setTimeout(next,800)});
+addEventListener('load',()=>{const ims=[...document.querySelectorAll('#flip .page img')];let k=0;const next=()=>{while(k<ims.length&&ims[k].getAttribute('src'))k++;if(k>=ims.length)return;const im=ims[k];setSrc(im,want(im,k));im.onload=im.onerror=()=>setTimeout(next,60)};setTimeout(next,800)});
 ui();
 
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}));
 function detail(id){
   const list=vis(),i=list.findIndex(p=>p.id===id),p=list[i],D=$('#detail');D.replaceChildren();
   if(!p){D.append(el('p','note',projects.length?'Project not found.':'Loading…'));return}
-  const bk=el('button','backbtn','← Back to the book');bk.onclick=()=>{location.hash='book'};D.append(bk);
+  const bar=el('div','dbar'),g1=el('div','grp'),g2=el('div','grp');
+  const bk=el('button',null,'← Back to the booklet');bk.onclick=()=>{location.hash='book'};
+  const mb=el('button',null,'Magnify');mb.id='dmagBtn';mb.title='Magnify details and floor plans (M)';mb.setAttribute('aria-pressed',dmag);mb.onclick=()=>setDmag(!dmag);
+  g1.append(bk,mb);
+  const pv=el('button',null,'← '+(list[i-1]?list[i-1].title:''));pv.disabled=!list[i-1];pv.style.visibility=list[i-1]?'visible':'hidden';pv.onclick=()=>{location.hash='project-'+list[i-1].id};
+  const nx=el('button',null,(list[i+1]?list[i+1].title:'')+' →');nx.style.visibility=list[i+1]?'visible':'hidden';nx.onclick=()=>{location.hash='project-'+list[i+1].id};
+  g2.append(pv,el('span','cnt',(i+1)+' / '+list.length),nx);bar.append(g1,g2);D.append(bar);
   const h=el('div','dhead');const L=el('div');L.append(el('span','num',String(i+1).padStart(2,'0')),el('h1',null,p.title||''),el('p','dtag',p.tagline||''),el('p','dsum',p.summary||''));
   const dl=el('dl','facts');[['Type',p.kind],['Location',p.place],['Year',p.year],['Context',p.context],['Tutors',p.tutors],['Team',p.team],['Software',p.software]].forEach(([k,v])=>{if(v){const d=el('div');d.append(el('dt',null,k),el('dd',null,v));dl.append(d)}});
   h.append(L,dl);D.append(h);
-  const sh=el('div','sheets');(p.spreads||[]).filter(s=>safe(s.src)).forEach((s,j)=>{const f=el('figure','sheet rv');f.style.setProperty('--r',((rnd(j,3)-.5)*1.2).toFixed(2)+'deg');const im=el('img');im.loading='lazy';im.alt=(p.title||'')+' – '+(s.tab||'');im.src=safe(s.src);const fc=el('figcaption');fc.append(el('span','lbl',s.tab||''),document.createTextNode(s.caption||''));f.append(im,fc);f.onclick=()=>{$('#box img').src=im.src;$('#box').classList.add('on')};sh.append(f);io.observe(f)});D.append(sh);
+  const sh=el('div','sheets');(p.spreads||[]).filter(s=>safe(s.src)).forEach((s,j)=>{const f=el('figure','sheet rv');f.style.setProperty('--r',((rnd(j,3)-.5)*1.2).toFixed(2)+'deg');const im=el('img');im.loading='lazy';im.alt=(p.title||'')+' – '+(s.tab||'');im.src=safe(s.src);const fc=el('figcaption');fc.append(el('span','lbl',s.tab||''),document.createTextNode(s.caption||''));f.append(im,fc);f.onclick=()=>{if(dmag)return;$('#box img').src=im.src;$('#box').classList.add('on')};f.addEventListener('pointermove',e=>dlens(e,im));f.addEventListener('pointerleave',()=>{if(dmag)lens.style.display='none'});sh.append(f);io.observe(f)});D.append(sh);
   const pn=el('div','pn');if(list[i-1]){const b=el('button',null,'← '+list[i-1].title);b.onclick=()=>{location.hash='project-'+list[i-1].id};pn.append(b)}else pn.append(el('span'));
   if(list[i+1]){const b=el('button',null,list[i+1].title+' →');b.onclick=()=>{location.hash='project-'+list[i+1].id};pn.append(b)}D.append(pn);
 }
+let dmag=false,dpow=2.4;
+function setDmag(on){dmag=on;document.body.classList.toggle('dmag',on);const b=$('#dmagBtn');if(b){b.setAttribute('aria-pressed',on);b.textContent=on?'Magnify on':'Magnify'}if(!on)lens.style.display='none'}
+function dlens(e,im){if(!dmag)return;const r=im.getBoundingClientRect(),R=130;if(lens.dataset.u!==im.src){lens.dataset.u=im.src;lens.style.backgroundImage=`url("${im.src}")`}
+  const w=r.width*dpow,h=r.height*dpow;lens.style.backgroundSize=`${w}px ${h}px`;lens.style.backgroundPosition=`${R-(e.clientX-r.left)*dpow}px ${R-(e.clientY-r.top)*dpow}px`;lens.style.left=e.clientX+'px';lens.style.top=e.clientY+'px';lens.style.display='block'}
+addEventListener('wheel',e=>{if(!dmag||!document.body.classList.contains('detail'))return;const f=e.target.closest('.sheet');if(!f)return;e.preventDefault();dpow=Math.max(1.5,Math.min(5,dpow*(e.deltaY<0?1.12:1/1.12)));dlens(e,f.querySelector('img'))},{passive:false});
+addEventListener('keydown',e=>{if((e.key==='m'||e.key==='M')&&document.body.classList.contains('detail')&&!e.target.closest('input,textarea'))setDmag(!dmag)});
 function markDetail(){const m=location.hash.match(/^#project-(.+)$/);if(!m)return;[...document.querySelectorAll('#chips button')].forEach(b=>{const on=b.dataset.id===m[1];b.classList.toggle('on',on);b.setAttribute('aria-current',on)})}
-function route(){const h=location.hash.slice(1);if(h.startsWith('project-')){document.body.classList.add('detail');detail(h.slice(8));scrollTo(0,0);markDetail()}else{document.body.classList.remove('detail');if(h==='about'||h==='contact')$('#about').scrollIntoView();size();show()}}
+function route(){const h=location.hash.slice(1);const pr=h.startsWith('project-');$('#navBook').classList.toggle('on',!pr);$('#navProj').classList.toggle('on',pr);$('#plab').textContent=pr?'Project pages':'In the booklet';if(pr){document.body.classList.add('detail');lens.style.display='none';detail(h.slice(8));scrollTo(0,0);markDetail()}else{setDmag(false);document.body.classList.remove('detail');if(h==='about'||h==='contact')$('#about').scrollIntoView();size();show()}}
 addEventListener('hashchange',route);
 $('#box').onclick=()=>$('#box').classList.remove('on');addEventListener('keydown',e=>{if(e.key==='Escape')$('#box').classList.remove('on')});
 function renderSite(){
